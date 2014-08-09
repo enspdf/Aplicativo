@@ -4,10 +4,14 @@
  * and open the template in the editor.
  */
 
-package Logica;
+package vista;
+
 
 import Vista.frmcatetoa;
 import Vista.frmhipotenusa;
+import Vista.frmarea;
+import Vista.frmserie;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,7 +24,9 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        this.setResizable(true);
     }
+    public static boolean abc=false;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -95,6 +101,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/circunferencia.png"))); // NOI18N
         jMenuItem4.setText("Circunferencia");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem4);
 
         editMenu.add(jMenu3);
@@ -105,6 +116,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/circuitoserie.png"))); // NOI18N
         jMenuItem5.setText("Intensidad Circuito Serie");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem5);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
@@ -179,14 +195,44 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jMenu1MouseClicked
-
+    
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        frmhipotenusa hipotenusa= new frmhipotenusa();
-        escritorio.add(hipotenusa);
-        hipotenusa.toFront();
-        hipotenusa.setVisible(true);
+        if (abc == false) {
+            frmhipotenusa hipotenusa = new frmhipotenusa();
+            escritorio.add(hipotenusa);
+            hipotenusa.toFront();
+            hipotenusa.setVisible(true);
+            abc=true;
+            
+        }
+        
+        
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        if (abc== false) {
+            frmarea are = new frmarea();
+            escritorio.add(are);
+            are.toFront();
+            are.setVisible(true);
+            abc=true;
+        }
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        if (abc==false) {
+            frmserie ser = new frmserie();
+            escritorio.add(ser);
+            ser.toFront();
+            ser.setVisible(true);
+            abc=true;
+            
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

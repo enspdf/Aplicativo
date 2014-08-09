@@ -20,6 +20,7 @@ public class frmcatetoa extends javax.swing.JInternalFrame {
     public frmcatetoa() {
         initComponents();
         txtcatetoa.setEnabled(false);
+        
     }
 
     /**
@@ -63,8 +64,18 @@ public class frmcatetoa extends javax.swing.JInternalFrame {
         });
 
         btnlimpiar.setText("Limpiar");
+        btnlimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlimpiarActionPerformed(evt);
+            }
+        });
 
         btnsalir.setText("Salir");
+        btnsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -143,6 +154,18 @@ public class frmcatetoa extends javax.swing.JInternalFrame {
 
         }
     }//GEN-LAST:event_btncalcularActionPerformed
+
+    private void btnlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiarActionPerformed
+        // TODO add your handling code here:
+        txtcatetoa.setText("");
+        txtcatetob.setText("");
+        txthipotenusa.setText("");
+    }//GEN-LAST:event_btnlimpiarActionPerformed
+
+    private void btnsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalirActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnsalirActionPerformed
 
     /**
      * @param args the command line arguments
