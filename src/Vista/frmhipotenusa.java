@@ -45,7 +45,10 @@ public class frmhipotenusa extends javax.swing.JInternalFrame {
 
         jLabel2.setText("jLabel2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Calcular Hipotenusa"));
 

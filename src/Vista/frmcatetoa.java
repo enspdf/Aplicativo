@@ -42,7 +42,10 @@ public class frmcatetoa extends javax.swing.JInternalFrame {
         btnlimpiar = new javax.swing.JButton();
         btnsalir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setClosable(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Calcular Hipotenusa"));
 
