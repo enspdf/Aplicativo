@@ -148,9 +148,9 @@ public class frmcatetoa extends javax.swing.JInternalFrame {
         Pitagoras pi = new Pitagoras();
 
         try{
-            int v1= Integer.parseInt(txthipotenusa.getText());
-            int v2= Integer.parseInt(txtcatetob.getText());
-            int r= pi.catetoa(v1, v2);
+            double v1= Double.parseDouble(txtcatetob.getText());
+            double v2= Double.parseDouble(txthipotenusa.getText());            
+            double r= pi.catetoa(v1, v2);
             txtcatetoa.setText(String.valueOf(r));
             txtcatetoa.setEnabled(false);
         }

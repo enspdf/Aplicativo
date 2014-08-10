@@ -15,7 +15,7 @@ public class Area {
     Double radio;
     
     public Double Calcular(double radio){
-        resultado=(3.14159*radio*radio);
+        resultado=Math.PI*(radio*radio);
         return resultado;
     }
     

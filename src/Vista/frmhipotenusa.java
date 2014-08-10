@@ -150,9 +150,9 @@ public class frmhipotenusa extends javax.swing.JInternalFrame {
         Pitagoras pi = new Pitagoras();
         
         try{
-            int v1= Integer.parseInt(txtcatetoa.getText());
-            int v2= Integer.parseInt(txtcatetob.getText());
-            int r= pi.hipotenusa(v1, v2);
+            double v1= Double.parseDouble(txtcatetoa.getText());
+            double v2= Double.parseDouble(txtcatetob.getText());
+            double r= pi.hipotenusa(v1, v2);
             txthipotenusa.setText(String.valueOf(r));
             txthipotenusa.setEnabled(false);
         }

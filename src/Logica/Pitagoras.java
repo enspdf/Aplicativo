@@ -10,24 +10,24 @@ package Logica;
  * @author Sebastian-pc
  */
 public class Pitagoras {
-    int resultado;
-    int calculo;
+    double resultado;
+    double calculo;
     
-    public int hipotenusa(int catetoa, int catetob){
-        calculo=((catetoa*catetoa)+(catetob*catetob));
-        resultado=(int) Math.sqrt(calculo);
+    public double hipotenusa(double catetoa, double catetob){
+        calculo= ((catetoa*catetoa)+(catetob*catetob));
+        resultado= Math.sqrt(calculo);
         return resultado;
     }
     
-    public int catetoa(int catetob, int hipotenusa){
-        calculo=((hipotenusa*hipotenusa)-(catetob*catetob));
-        resultado=(int) Math.sqrt(calculo);
+    public double catetoa(double catetob, double hipotenusa){
+//        calculo=hipotenusa*hipotenusa-catetob*catetob;
+        resultado= Math.sqrt(hipotenusa*hipotenusa-catetob*catetob);
         return resultado;
     }
     
-    public int catetob(int catetoa, int hipotenusa){
+    public double catetob(double catetoa, double hipotenusa){
         calculo=((hipotenusa*hipotenusa)-(catetoa*catetoa));
-        resultado=(int) Math.sqrt(calculo);
+        resultado=Math.sqrt(calculo);
         return resultado;
     }
     
