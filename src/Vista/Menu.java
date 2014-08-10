@@ -7,11 +7,14 @@
 package vista;
 
 
-import Vista.frmcatetoa;
-import Vista.frmhipotenusa;
 import Vista.frmarea;
+import Vista.frmcatetoa;
+import Vista.frmcatetob;
+import Vista.frmhipotenusa;
+import Vista.frmparalelo;
 import Vista.frmserie;
-import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+import Vista.frmacercade;
 
 /**
  *
@@ -25,6 +28,9 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         this.setResizable(true);
+        this.setLocationRelativeTo(null);
+        this.setTitle(". : Solución de operaciones : .");
+        setIconImage(new ImageIcon(getClass().getResource("/Files/aplicativo.png")).getImage());
     }
     public static boolean abc=false;
 
@@ -81,6 +87,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/catetob.png"))); // NOI18N
         jMenuItem2.setText("Cateto B");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
@@ -126,6 +137,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/circuitoparalelo.png"))); // NOI18N
         jMenuItem6.setText("Intensidad Circuito Parelelo");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem6);
 
         editMenu.add(jMenu4);
@@ -140,6 +156,11 @@ public class Menu extends javax.swing.JFrame {
         aboutMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/acercade.png"))); // NOI18N
         aboutMenuItem.setMnemonic('a');
         aboutMenuItem.setText("Acerca de...");
+        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutMenuItemActionPerformed(evt);
+            }
+        });
         helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);
@@ -165,14 +186,14 @@ public class Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 971, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,14 +219,18 @@ public class Menu extends javax.swing.JFrame {
     
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-        if (abc == false) {
+            frmhipotenusa hipotenusa = new frmhipotenusa();
+            escritorio.add(hipotenusa);
+            hipotenusa.toFront();
+            hipotenusa.setVisible(true);
+        /*if (abc == false) {
             frmhipotenusa hipotenusa = new frmhipotenusa();
             escritorio.add(hipotenusa);
             hipotenusa.toFront();
             hipotenusa.setVisible(true);
             abc=true;
             
-        }
+        }*/
         
         
 
@@ -213,26 +238,66 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        if (abc== false) {
+            frmarea are = new frmarea();
+            escritorio.add(are);
+            are.toFront();
+            are.setVisible(true);
+        /*if (abc== false) {
             frmarea are = new frmarea();
             escritorio.add(are);
             are.toFront();
             are.setVisible(true);
             abc=true;
-        }
+        }*/
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        if (abc==false) {
+            frmserie ser = new frmserie();
+            escritorio.add(ser);
+            ser.toFront();
+            ser.setVisible(true);
+        /*if (abc==false) {
             frmserie ser = new frmserie();
             escritorio.add(ser);
             ser.toFront();
             ser.setVisible(true);
             abc=true;
             
-        }
+        }*/
+        
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        frmparalelo para = new frmparalelo();
+            escritorio.add(para);
+            para.toFront();
+            para.setVisible(true);
+        /*if (abc==false) {
+            frmparalelo para = new frmparalelo();
+            escritorio.add(para);
+            para.toFront();
+            para.setVisible(true);
+            abc=true;
+        }*/
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        frmcatetob catb=new frmcatetob();
+        escritorio.add(catb);
+        catb.toFront();
+        catb.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
+        // TODO add your handling code here:
+        frmacercade acerca = new frmacercade();
+        escritorio.add(acerca);
+        acerca.toFront();
+        acerca.setVisible(true);
+    }//GEN-LAST:event_aboutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
