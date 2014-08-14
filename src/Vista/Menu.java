@@ -7,6 +7,7 @@
 package vista;
 
 
+import Vista.frmacercade;
 import Vista.frmarea;
 import Vista.frmcatetoa;
 import Vista.frmcatetob;
@@ -14,7 +15,7 @@ import Vista.frmhipotenusa;
 import Vista.frmparalelo;
 import Vista.frmserie;
 import javax.swing.ImageIcon;
-import Vista.frmacercade;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -32,7 +33,30 @@ public class Menu extends javax.swing.JFrame {
         this.setTitle(". : Solución de operaciones : .");
         setIconImage(new ImageIcon(getClass().getResource("/Files/aplicativo.png")).getImage());
     }
-    public static boolean abc=false;
+
+    private void mostrarFormulario(Class<?> aClass) {
+        try {
+            JInternalFrame view = null;
+            // Buscar objeto
+            for (JInternalFrame bean : escritorio.getAllFrames()) {
+                if (aClass.isInstance(bean)) {
+                    view = bean;
+                    break;
+                }
+            }
+            // Si no lo encuentra
+            if (view == null) {
+                view = (JInternalFrame)Class.forName(aClass.getName()).newInstance();
+                escritorio.add(view);
+            }
+            // Mostrar Formulario
+            view.setVisible(true);
+            view.setSelected(true);
+            } catch (Exception e) {
+                System.err.println(e + "");
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,7 +69,6 @@ public class Menu extends javax.swing.JFrame {
 
         escritorio = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
         editMenu = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -61,11 +84,6 @@ public class Menu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/aplicativo.png"))); // NOI18N
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("Aplicativo ");
-        menuBar.add(fileMenu);
 
         editMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Files/Funciones.png"))); // NOI18N
         editMenu.setMnemonic('e');
@@ -201,10 +219,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        frmcatetoa catetoa = new frmcatetoa();
-        escritorio.add(catetoa);
-        catetoa.toFront();
-        catetoa.setVisible(true);
+        mostrarFormulario(frmcatetoa.class);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
@@ -219,84 +234,33 @@ public class Menu extends javax.swing.JFrame {
     
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
-            frmhipotenusa hipotenusa = new frmhipotenusa();
-            escritorio.add(hipotenusa);
-            hipotenusa.toFront();
-            hipotenusa.setVisible(true);
-        /*if (abc == false) {
-            frmhipotenusa hipotenusa = new frmhipotenusa();
-            escritorio.add(hipotenusa);
-            hipotenusa.toFront();
-            hipotenusa.setVisible(true);
-            abc=true;
-            
-        }*/
-        
-        
-
+            mostrarFormulario(frmhipotenusa.class);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-            frmarea are = new frmarea();
-            escritorio.add(are);
-            are.toFront();
-            are.setVisible(true);
-        /*if (abc== false) {
-            frmarea are = new frmarea();
-            escritorio.add(are);
-            are.toFront();
-            are.setVisible(true);
-            abc=true;
-        }*/
+            mostrarFormulario(frmarea.class);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-            frmserie ser = new frmserie();
-            escritorio.add(ser);
-            ser.toFront();
-            ser.setVisible(true);
-        /*if (abc==false) {
-            frmserie ser = new frmserie();
-            escritorio.add(ser);
-            ser.toFront();
-            ser.setVisible(true);
-            abc=true;
-            
-        }*/
+            mostrarFormulario(frmserie.class);
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        frmparalelo para = new frmparalelo();
-            escritorio.add(para);
-            para.toFront();
-            para.setVisible(true);
-        /*if (abc==false) {
-            frmparalelo para = new frmparalelo();
-            escritorio.add(para);
-            para.toFront();
-            para.setVisible(true);
-            abc=true;
-        }*/
+        mostrarFormulario(frmparalelo.class);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        frmcatetob catb=new frmcatetob();
-        escritorio.add(catb);
-        catb.toFront();
-        catb.setVisible(true);
+        mostrarFormulario(frmcatetob.class);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
         // TODO add your handling code here:
-        frmacercade acerca = new frmacercade();
-        escritorio.add(acerca);
-        acerca.toFront();
-        acerca.setVisible(true);
+        mostrarFormulario(frmacercade.class);
     }//GEN-LAST:event_aboutMenuItemActionPerformed
 
     /**
@@ -338,7 +302,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenu editMenu;
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
